@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoosier Lottery Numbers</title>
+</head>
+<body>
+
+     <h2>--Hoosier Lottery Numbers--</h2>
+
+    <h4>for loop Numbers:</h4>
+    <p id="forLoopNumbers"></p>
+
+    <h4>while loop Numbers:</h4>
+    <p id="whileLoopNumbers"></p>
+
+    <script>
+
+        // Function to create a random number between 1 and 49
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Part 1: for loop
+        let forLoopNumbers = "";
+        for (let i = 0; i < 6; i++) {
+            const randomNumber = getRandomNumber(1, 49);
+            forLoopNumbers += `${randomNumber} `;
+            // console.log to log the numbers to the console, for debugging purposes.
+            console.log(`For Loop - Number ${i + 1}: ${randomNumber}`);
+        }
+        document.getElementById("forLoopNumbers").textContent = forLoopNumbers;
+
+        // Part 2: while loop
+        let whileLoopNumbers = "";
+        let whileLoopCounter = 0;
+        while (whileLoopCounter < 6) {
+            const randomNumber = getRandomNumber(1, 49);
+            whileLoopNumbers += `${randomNumber} `;
+            // console.log to log the numbers to the console, for debugging purposes.
+            console.log(`While Loop - Number ${whileLoopCounter + 1}: ${randomNumber}`);
+            whileLoopCounter++;
+        }
+        document.getElementById("whileLoopNumbers").textContent = whileLoopNumbers;
+    </script>
+    
+</body>
+</html>
